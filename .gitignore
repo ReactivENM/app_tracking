@@ -1,0 +1,63 @@
+# Carpeta de salida de compilación
+WindowsFormsApp1/obj
+
+# Archivos temporales generados por Visual Studio
+.vscode/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# Archivos de usuario
+*.suo
+*.user
+*.userprefs
+
+# Registros de compilación y archivos de caché
+*.log
+*.sqlite
+*.nupkg
+**/packages/
+**/obj/
+
+# Archivos de respaldo y carpetas de respaldo
+*[Bb]ackup/
+[Oo]bj/
+[Bb]in64/
+[Oo]bj64/
+[Bb]ackups/
+[Ll]og/
+[Ll]ogs/
+[Bb]in[Bb]ackup/
+[Oo]bj[Bb]ackup/
+
+# Carpetas y archivos generados por herramientas de terceros
+[Tt]humbs.db
+[Dd]esktop.ini
+*.dbmdl
+*.dbproj.suo
+*.jfm
+*.user
+*.vsp
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.mdf
+*.ldf
+*.psess
+*.nib
+*.vssscc
+*~
+*.suo
+*.swp
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
