@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System;
 using System.Windows.Forms;
 using Controllers.PackageController;
+using Newtonsoft.Json;
 
 namespace Tracking
 {
@@ -19,20 +20,20 @@ namespace Tracking
             bool fieldsValid = validateFields();
             if (!fieldsValid) return;
 
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            dictionary.Add("en_espera", "En espera");
-            dictionary.Add("en_viaje", "En viaje");
-            dictionary.Add("entregado", "Entregado");
+            Dictionary<string, string> formattedStatus = new Dictionary<string, string>();
+            formattedStatus.Add("en_espera", "En espera");
+            formattedStatus.Add("en_viaje", "En viaje");
+            formattedStatus.Add("entregado", "Entregado");
 
             string packageId = input_id.Text;
-            string estado = await GetPackageStatus(packageId);
-            if(estado == null)
+            var pkgStatus = await GetPackageStatus(packageId);
+            Responses.PackageStatus status = JsonConvert.DeserializeObject<Responses.PackageStatus>(pkgStatus);
+            if (status == null)
             {
                 MessageBox.Show("No pudimos encontrar este paquete", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            MessageBox.Show("Estado de tu paquete: " + dictionary[estado], "Error de validación", MessageBoxButtons.OK);
+            MessageBox.Show("El paquete se encuentra " + formattedStatus[status.Estado] + ".", "Estado del paquete", MessageBoxButtons.OK);
         }
 
         private async Task<string> GetPackageStatus(string packageId)
