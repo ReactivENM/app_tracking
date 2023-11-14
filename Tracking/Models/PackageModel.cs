@@ -15,7 +15,7 @@ namespace Models.PackageModel
 
         public async Task<string> GetStatus(string id_externo)
         {
-            string apiUrl = $"{ConfigurationSettings.AppSettings["API_URI"]}/transit/status/{id_externo}";
+            string apiUrl = $"{ConfigurationSettings.AppSettings["API_URL"]}/transit/status/{id_externo}";
 
             using (HttpClient client = new HttpClient())
             {
