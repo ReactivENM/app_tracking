@@ -3,6 +3,7 @@ WindowsFormsApp1/obj
 
 # Archivos temporales generados por Visual Studio
 .vscode/
+.vs/
 *.suo
 *.user
 *.userprefs
